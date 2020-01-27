@@ -87,6 +87,17 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+	if(Math.abs(x-y) <= 1){
+		return [];
+	}
+	//e.g. range(2,9)
+	else if(x < y){
+		return [x+1].concat(range(x+1,y));
+	}
+	//e.g. range(9, 2)
+	else{
+		return [x-1].concat(range(x-1, y));
+	}
 };
 
 // 7. Compute the exponent of a number.
