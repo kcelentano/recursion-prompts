@@ -49,7 +49,23 @@ var arraySum = function(array) {
 };
 
 // 4. Check if a number is even.
+// return true for even, false for odd
 var isEven = function(n) {
+	
+	if(n < 0){
+		n = Math.abs(n);
+	}
+
+	if(n === 1){
+		return false;
+	}
+	else if(n === 0){
+		return true;
+	}
+	else{
+		return isEven(n - 2);
+	}
+
 };
 
 // 5. Sum all integers below a given integer.
